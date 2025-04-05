@@ -1,16 +1,25 @@
 import { createBrowserRouter } from "react-router"
 import App from "../App"
+import { Layout } from "../components/layout/Layout"
 import { Home } from "../pages/Home"
 
 export function getAppRouter() {
   return createBrowserRouter([
     {
       path: "/",
-      element: <App />,
+      element: (
+        <Layout>
+          <App />
+        </Layout>
+      ),
     },
     {
       path: "/home",
-      element: <Home />,
+      element: (
+        <Layout>
+          <Home />
+        </Layout>
+      ),
     },
   ])
 }
